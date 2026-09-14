@@ -1,7 +1,20 @@
 aid: aiforcetech
-name: Aiforcetech
-description: 'Aiforcetech is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: AIForce Technology
+description: 'AIForce Technology (Beijing Zhongke Yuandongli Technology Co., Ltd. / 北京中科原动力科技有限公司)
+  is a Beijing agricultural-robotics manufacturer incubated out of the Chinese Academy
+  of Sciences Institute of Microelectronics, registered in 2018 and operating since
+  July 2019, with Chinese Academy of Engineering academician Li Deyi as chief scientist.
+  It builds autonomous and battery-electric farm machinery across four product lines:
+  the Wantu (万途) electric intelligent tractors, the Zhiniu (智牛) unmanned agricultural
+  machines, the Zhinong (智农) multi-function field robots, and the Zhiyun (智耘) unmanned-operation
+  system that adds full-day autonomous tillage, planting, crop management and harvest
+  to existing machinery in dry fields, paddies and greenhouses, paired with a mobile
+  app and telemetry cloud for route setting and operation monitoring. It is a hardware
+  company that sells machines and retrofit systems to farms, cooperatives and agricultural
+  enterprises, backed by Vertex Ventures China, Chery and CCV among others, and named
+  champion of PepsiCo''s Greenhouse Accelerator APAC edition for an AI-powered low-carbon
+  automatic tractor. aiforcetech.com is a five-section Chinese marketing site with
+  no developer program, API, SDK or machine-readable specification of any kind.'
 url: https://raw.githubusercontent.com/api-evangelist/aiforcetech/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +25,15 @@ created: '2026-09-14'
 modified: '2026-09-14'
 tags:
 - Company
+- Agriculture
+- Agricultural Machinery
+- Agricultural Robotics
+- Robotics
+- Artificial Intelligence
+- Autonomous Vehicles
+- Precision Agriculture
+- Electric Vehicles
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +41,39 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/aiforcetech-domain-security.yml
+- type: LLMsTxt
+  url: llms/aiforcetech-llms.txt
 - type: Website
-  url: https://equityzen.com/company/aiforcetech
+  url: https://www.aiforcetech.com/
+x-enrichment:
+  date: '2026-09-14'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    AIForce Technology sells autonomous and electric farm machinery with an embedded
+    self-driving stack, a companion mobile app and an internal telemetry cloud, but
+    exposes no public developer program — aiforcetech.com is a five-section Chinese
+    marketing site where /openapi.json, /swagger.json, /api-docs, /apis.json and /llms.txt
+    all return a real 404, api./dev./developer./open./cloud.aiforcetech.com do not resolve,
+    and the only other certificate-transparency hosts are an unconfigured default nginx
+    (tbox.) and a 403 media host (v.).
+  evidence:
+    - url: https://www.aiforcetech.com/sitemap.xml
+      status: 200
+    - url: https://www.aiforcetech.com/openapi.json
+      status: 404
+    - url: https://www.aiforcetech.com/llms.txt
+      status: 404
+    - url: https://www.aiforcetech.com/.well-known/openid-configuration
+      status: 404
+    - url: https://tbox.aiforcetech.com/
+      status: 200
+    - url: https://v.aiforcetech.com/
+      status: 403
+  checked: '2026-09-14'

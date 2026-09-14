@@ -1,0 +1,41 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  Anonymous probes of /.well-known/* on the only live host AIForce Technology serves
+  (www.aiforcetech.com). No API/docs/auth host exists — api., dev., developer., open.,
+  cloud. and console.aiforcetech.com all NXDOMAIN — so there was nowhere else to probe.
+note: >-
+  No .well-known document was found. The three paths recorded 404 were observed cleanly
+  (the site's Alibaba Cloud / Wanwang default 404 page). The remaining four could not be
+  read: the Alibaba Cloud (Tengine/kunlun) edge answered every further request — well-known
+  paths and ordinary content pages alike — with HTTP 429, an edge rate-limit turning our
+  crawler away, not a provider response. No WellKnown pointer is emitted because no path
+  returned a 200 carrying a real document.
+hosts:
+- host: www.aiforcetech.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/security.txt
+    status: 429
+    file: null
+    note: rate-limited by the CDN edge; could not be read
+  - path: /.well-known/oauth-authorization-server
+    status: 429
+    file: null
+    note: rate-limited by the CDN edge; could not be read
+  - path: /.well-known/api-catalog
+    status: 429
+    file: null
+    note: rate-limited by the CDN edge; could not be read
+  - path: /.well-known/agent-card.json
+    status: 429
+    file: null
+    note: rate-limited by the CDN edge; could not be read

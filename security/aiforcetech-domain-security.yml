@@ -1,0 +1,24 @@
+generated: '2026-09-14'
+method: probed
+source: live DNS/TLS/HTTP probes of the aiforcetech.com marketing host (the company publishes
+  no API host); TLS values read directly with openssl s_client after probe-domain-security.py
+  recorded a transient socket failure against the Alibaba Cloud CDN edge.
+hosts:
+- host: www.aiforcetech.com
+  https: true
+  tls_version: TLSv1.3
+  cert_issuer: "Let's Encrypt (YE1)"
+  cert_expires: Oct  2 02:23:46 2026 GMT
+  hsts: null
+  note: HSTS could not be read — the Alibaba Cloud (Tengine/kunlun) edge answered every
+    HEAD/GET with HTTP 429 after the first handful of probes, so no response headers
+    were observable. Recorded as unknown rather than false.
+domains:
+- domain: aiforcetech.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 include:spf.mxhichina.com -all
+  dmarc: false
+  note: No _dmarc.aiforcetech.com TXT record and no CAA record at the apex. Mail is
+    Alibaba Cloud (mxhichina.com).
